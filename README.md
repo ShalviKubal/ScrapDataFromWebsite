@@ -2,6 +2,7 @@
 This project has a node server and a angular UI to scrap data from a given website using a keyword and displaying the occurrence or count of the words in the fetched content. 
 
 Command to run the server : node index.js
+
 Command to run the UI : npm run serve
 
 Hit on broswer to see the resuls : http://localhost:3000/home
@@ -11,3 +12,5 @@ The node server makes use of express for routing and cheerio to scrap the data a
 Maximum 50 pages are searched.
 
 The result if found is returned to the UI. The UI parses the string and counts number of times any word occures in the content.
+
+Please find the screenshots for the results of various keywords.
