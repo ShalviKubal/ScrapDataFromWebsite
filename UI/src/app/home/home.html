@@ -1,0 +1,45 @@
+
+    <div class="panel panel-primary ">
+      <div class="panel-heading">Shall We Search ?</div>
+      <div class="panel-body">
+         <form>
+            <div class="form-group col-xs-4">
+              <div class="row">
+                  <label for="sel1">select one keyword:</label>
+                  <select class="form-control col-xs-4" id="sel1" ng-model="homeCtrl.searchString">
+                    <option>medical imaging</option>
+                    <option>diagnostic</option>
+                    <option>ovidius</option>
+                    <option>mental health</option>
+                    <option>medical technologies</option>
+                  </select>
+              </div>
+                <br>
+                <div class="row"><button type="button" class="btn btn-info btn-block" ng-click="homeCtrl.searchContent()">Search</button></div>
+                <br>
+                <div ng-show="homeCtrl.showCounts && !homeCtrl.error">
+                    <div ng-show="homeCtrl.count == 0" class="row well well-lg">
+                        Please wait till we fetch data... This may take 5-6 minutes
+                    </div>
+                    <table border="1" class="table-hover" ng-show="homeCtrl.count != 0">
+                        <thead>
+                          <tr>
+                            <th>Word</th>
+                            <th>Count</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="result in homeCtrl.result">
+                              <td>{{result.name}}</td>
+                              <td>{{result.count}}</td>  
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div ng-show="homeCtrl.error" class="row well well-lg">Something went wrong please try again later!</div>
+             </div>
+          </form>
+
+     </div>
+
+    </div>
